@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pomodoro Productivity Web App - A simple timer, task list, and quick links manager">
+  <meta name="theme-color" content="#4A90E2">
+  <title>Pomodoro Productivity App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header with Settings -->
+  <header class="app-header">
+    <div class="header-controls">
+      <button id="theme-toggle-btn" class="btn btn-icon" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- Greeting Section -->
+  <section class="greeting-section" aria-label="Greeting">
+    <div class="greeting-text">
+      <h1 id="greeting-message">Good Morning</h1>
+      <p id="current-time">10:30</p>
+      <p id="current-date">Monday, January 15, 2024</p>
+    </div>
+    <div class="greeting-settings" id="greeting-settings" aria-label="Greeting settings">
+      <div class="custom-name-input-group">
+        <input type="text" id="custom-name-input" placeholder="Enter your name" aria-label="Custom name">
+        <button id="save-name-btn" class="btn btn-secondary" aria-label="Save name">Save Name</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timer Section -->
+  <section class="timer-section" aria-label="Pomodoro Timer">
+    <div class="timer-display">
+      <div id="timer-value" class="timer-value">25:00</div>
+      <div id="timer-status" class="timer-status">Ready</div>
+    </div>
+    <div class="timer-controls">
+      <button id="start-btn" class="btn btn-primary" aria-label="Start timer">Start</button>
+      <button id="stop-btn" class="btn btn-secondary" disabled aria-label="Stop timer">Stop</button>
+      <button id="reset-btn" class="btn btn-secondary" disabled aria-label="Reset timer">Reset</button>
+    </div>
+    <div class="timer-settings" id="timer-settings" aria-label="Timer settings">
+      <div class="duration-control-group">
+        <label for="duration-input">Duration (minutes):</label>
+        <input type="number" id="duration-input" min="1" max="60" value="25" aria-label="Timer duration">
+        <button id="set-duration-btn" class="btn btn-secondary" aria-label="Set duration">Set</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Task Section -->
+  <section class="task-section" aria-label="Task List">
+    <h2>Tasks</h2>
+    <div class="task-input-group">
+      <input type="text" id="task-input" placeholder="Add a new task..." aria-label="Task input">
+      <button id="add-task-btn" class="btn btn-primary" aria-label="Add task">Add</button>
+    </div>
+    <div class="task-controls" id="task-controls" aria-label="Task controls">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select" aria-label="Sort tasks">
+        <option value="dateAdded">Date Added</option>
+        <option value="alphabetically">Alphabetically</option>
+        <option value="completedFirst">Completed First</option>
+        <option value="incompleteFirst">Incomplete First</option>
+      </select>
+    </div>
+    <ul id="task-list" class="task-list" aria-label="Task list">
+      <!-- Tasks rendered here -->
+    </ul>
+    <div id="empty-tasks-message" class="empty-state" role="status">No tasks yet</div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="quick-links-section" aria-label="Quick Links">
+    <h2>Quick Links</h2>
+    <div class="quick-link-input-group">
+      <input type="text" id="link-name-input" placeholder="Link name" aria-label="Quick link name">
+      <input type="url" id="link-url-input" placeholder="https://example.com" aria-label="Quick link URL">
+      <button id="save-link-btn" class="btn btn-primary" aria-label="Save quick link">Save</button>
+    </div>
+    <div id="quick-links-container" class="quick-links-container" aria-label="Quick links">
+      <!-- Quick links rendered here -->
+    </div>
+    <div id="empty-links-message" class="empty-state" role="status">No quick links yet</div>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
